@@ -1,0 +1,452 @@
+[{
+  "_id": {
+    "$oid": "65a718bf614138d8592991c4"
+  },
+  "korisnicko_ime": "mate",
+  "lozinka": "e55075a5d186a8fa916911624bf7d9d549190ab45ce5a6865411461b9d1aca4f",
+  "tip": "ucenik",
+  "ime": "Mateja",
+  "prezime": "Matic",
+  "pol": "M",
+  "adresa": "dsklhfn 11000 Beograd",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "mate@mate.com",
+  "tip_skole": "osnovna",
+  "trenutni_razred": 2,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Ime psa",
+      "odgovor": "Zeljko"
+    }
+  ],
+  "salt": "5f9824cbd4cfd0d8",
+  "predmeti": [],
+  "uzrasti": [],
+  "profilna_slika_path": "mate.png",
+  "cv_path:": "mate.pdf"
+},
+{
+  "_id": {
+    "$oid": "65abd7372f8227a07aa0d714"
+  },
+  "korisnicko_ime": "mare",
+  "lozinka": "3dd553f47d0b95274128b61fff0482a8d30a89352a8e54d835fb5c647c57969e",
+  "tip": "nastavnik",
+  "ime": "Marija",
+  "prezime": "Maric",
+  "pol": "Z",
+  "adresa": "Petra Kocica 14",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "mare@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Gitara",
+      "odgovor": "Yamaha"
+    }
+  ],
+  "salt": "917228f173a1e9f8",
+  "predmeti": [
+    "Informatika",
+    "Programiranje",
+    "Fizika",
+    "Hemija",
+    "Nemački jezik",
+    "Baze Podataka"
+  ],
+  "uzrasti": [
+    "srednja"
+  ],
+  "status": "blocked",
+  "izvorpitanje": "Online",
+  "profilna_slika_path": "mare.png",
+  "cv_path": "mare.pdf"
+},
+{
+  "_id": {
+    "$oid": "65abea202f8227a07aa0d735"
+  },
+  "korisnicko_ime": "choda",
+  "lozinka": "6bbd9e9a27188aa344eda88e18ee35f322214b2e6ff340df2aa3d7ea617f26c7",
+  "tip": "nastavnik",
+  "ime": "David",
+  "prezime": "Popovic",
+  "pol": "M",
+  "adresa": "567 Cedrova ulica, GGGGG",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "choda@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Omiljeni racunar",
+      "odgovor": "MacBook"
+    }
+  ],
+  "salt": "708baeef251c641e",
+  "predmeti": [
+    "Španski jezik",
+    "Matematika",
+    "Fizika",
+    "Latinski jezik",
+    "IOA"
+  ],
+  "uzrasti": [
+    "osnovna 5-8",
+    "srednja"
+  ],
+  "status": "active",
+  "izvorpitanje": "reklama",
+  "profilna_slika_path": "choda.png",
+  "cv_path": "choda.pdf"
+},
+{
+  "_id": {
+    "$oid": "65ae5efe212b6d40bbd481dd"
+  },
+  "korisnicko_ime": "admin",
+  "lozinka": "7b5eef90bc804f22e883c210ec78c1ba2785780cd5fa91e9547b4a4e1c4d8d6b",
+  "tip": "admin",
+  "ime": "Admin",
+  "prezime": "Admin",
+  "pol": "Z",
+  "adresa": "567 Cedrova ulica, GGGGG",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "admin@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "r",
+      "odgovor": "r"
+    }
+  ],
+  "salt": "01ed639bb390a06f",
+  "predmeti": [
+    "Matematika",
+    "Fizika",
+    "Hemija",
+    "Informatika",
+    "Programiranje",
+    "OS"
+  ],
+  "uzrasti": [
+    "srednja"
+  ],
+  "status": "pending",
+  "izvorpitanje": "",
+  "profilna_slika_path": "default.png",
+  "cv_path": ""
+},
+{
+  "_id": {
+    "$oid": "65b2eded6175e87e20f511d9"
+  },
+  "korisnicko_ime": "pavle",
+  "lozinka": "8296e5461b7b60a7b58c1c1c85b468c59cd0fba99a03c4b15671b9ac80486f82",
+  "tip": "nastavnik",
+  "ime": "Pavle",
+  "prezime": "Mirkovic",
+  "pol": "M",
+  "adresa": "567 Cedrova ulica, GGGGG",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "pavle@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Broj pasa",
+      "odgovor": "4"
+    }
+  ],
+  "salt": "ad9edcd5b2d87fb5",
+  "predmeti": [
+    "Baze Podataka",
+    "OS1",
+    "IOA"
+  ],
+  "uzrasti": [
+    "osnovna 5-8",
+    "srednja"
+  ],
+  "status": "active",
+  "izvorpitanje": "",
+  "profilna_slika_path": "default.png",
+  "cv_path": "pavle.pdf"
+},
+{
+  "_id": {
+    "$oid": "65b3f5763385cbf9388cc404"
+  },
+  "korisnicko_ime": "miha",
+  "lozinka": "8d315aa65d6b61e81236a58709a6c336606e633f7f8c062d3c8b679dbeef289b",
+  "tip": "nastavnik",
+  "ime": "Mihailo",
+  "prezime": "Tomasevic",
+  "pol": "M",
+  "adresa": "Novi Beograd",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "miha@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "abc",
+      "odgovor": "d"
+    }
+  ],
+  "salt": "96599fe57f3c84a9",
+  "predmeti": [
+    "Matematika",
+    "Informatika",
+    "Hemija"
+  ],
+  "uzrasti": [
+    "osnovna 1-4",
+    "osnovna 5-8",
+    "srednja"
+  ],
+  "status": "active",
+  "izvorpitanje": "",
+  "profilna_slika_path": "miha.png",
+  "cv_path": "miha.pdf"
+},
+{
+  "_id": {
+    "$oid": "65b5710bbee1fa0a0f4d12fc"
+  },
+  "korisnicko_ime": "zeljko",
+  "lozinka": "7d047bce78c0f09b263a4a69de0ae9e6231c53d2d1e02a8361492b25366b21b3",
+  "tip": "nastavnik",
+  "ime": "Zeljko",
+  "prezime": "Zeljic",
+  "pol": "M",
+  "adresa": "Francuska 13",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "zeljko@zeljko.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Oniljeni cvet",
+      "odgovor": "Bela rada zelj123A!"
+    }
+  ],
+  "salt": "b44106bb7c9b5f74",
+  "predmeti": [
+    "Srpski jezik i književnost",
+    "Engleski jezik",
+    "Nemački jezik",
+    "Italijanski jezik",
+    "Francuski jezik",
+    "Španski jezik",
+    "Esperanto"
+  ],
+  "uzrasti": [
+    "srednja",
+    "osnovna 5-8",
+    "osnovna 1-4"
+  ],
+  "status": "active",
+  "izvorpitanje": "",
+  "profilna_slika_path": "default.png",
+  "cv_path": "zeljko.pdf"
+},
+{
+  "_id": {
+    "$oid": "65b583c40a6406b3c9d6f91b"
+  },
+  "korisnicko_ime": "jovana",
+  "lozinka": "dc827b8406ba77e3fe170b095ee1a9a4b747e1f1c93eede286fe5af464f1968a",
+  "tip": "nastavnik",
+  "ime": "Jovana",
+  "prezime": "Jovanovic",
+  "pol": "Z",
+  "adresa": "Ljubljanska 9",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "jovana@etf.rs",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Lozinka",
+      "odgovor": "jovan123A!"
+    }
+  ],
+  "salt": "7a79cab689314226",
+  "predmeti": [
+    "Matematika",
+    "Fizika",
+    "Hemija",
+    "Informatika",
+    "Programiranje"
+  ],
+  "uzrasti": [
+    "osnovna 5-8",
+    "srednja"
+  ],
+  "status": "active",
+  "izvorpitanje": "",
+  "profilna_slika_path": "jovana.png",
+  "cv_path": "jovana.pdf"
+},
+{
+  "_id": {
+    "$oid": "65b59a770a6406b3c9d6f957"
+  },
+  "korisnicko_ime": "zika",
+  "lozinka": "7ff9a9aade08eeacb89eba8ba704cae3a86b9502719a108aacbe2abcf0ff3039",
+  "tip": "ucenik",
+  "ime": "Zika",
+  "prezime": "Zivojinovic",
+  "pol": "M",
+  "adresa": "567 Cedrova ulica, 15000",
+  "kontakt_telefon": "+11111111111",
+  "email_adresa": "zika@zika.rs",
+  "tip_skole": "osnovna",
+  "trenutni_razred": 6,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Omiljeni broj",
+      "odgovor": "17"
+    }
+  ],
+  "salt": "a58e66a633695c9e",
+  "predmeti": [],
+  "uzrasti": []
+},
+{
+  "_id": {
+    "$oid": "65b59ad60a6406b3c9d6f95a"
+  },
+  "korisnicko_ime": "hana",
+  "lozinka": "e7213bd46befba03ea2ca1f5dafc098b887b76e0e8f5ae8cf71dd4d2f37b49b7",
+  "tip": "ucenik",
+  "ime": "Hana",
+  "prezime": "Andric",
+  "pol": "Z",
+  "adresa": "Takovska 133",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "hana@gmail.com",
+  "tip_skole": "srednja-strucna",
+  "trenutni_razred": 2,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Prvi pas",
+      "odgovor": "Medena"
+    }
+  ],
+  "salt": "4c7b3c140aa03253",
+  "predmeti": [],
+  "uzrasti": []
+},
+{
+  "_id": {
+    "$oid": "65b62e28cf8ea280c0af0e3d"
+  },
+  "korisnicko_ime": "megafox1901",
+  "lozinka": "117fcd74cbe769c856cdd2edd4ea6bb14a8f03f935a54e5e2748904fdbefa75e",
+  "tip": "nastavnik",
+  "ime": "megafox",
+  "prezime": "1901",
+  "pol": "M",
+  "adresa": "Mese Selimovica 5/3",
+  "kontakt_telefon": "+38169651342",
+  "email_adresa": "megafox1901@gmail.com",
+  "tip_skole": "",
+  "trenutni_razred": 0,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Kako ti se zove pas",
+      "odgovor": "nemam"
+    }
+  ],
+  "salt": "8ceef153d513ff77",
+  "predmeti": [
+    "Fortnite"
+  ],
+  "uzrasti": [
+    "osnovna 5-8",
+    "osnovna 1-4"
+  ],
+  "status": "active",
+  "izvorpitanje": "",
+  "profilna_slika_path": "megafox1901.jpg",
+  "cv_path": "megafox1901.pdf"
+},
+{
+  "_id": {
+    "$oid": "65b8250f9f4385cb9974315f"
+  },
+  "korisnicko_ime": "dzoni",
+  "lozinka": "70cf0f0feb008071f7be9090ce188c837318235b769e84a674bbb6fe832b43ef",
+  "tip": "ucenik",
+  "ime": "Nikola",
+  "prezime": "Antic",
+  "pol": "M",
+  "adresa": "Kneginje Ljubice 15",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "dzoni@dzoni.rs",
+  "tip_skole": "srednja-gimnazija",
+  "trenutni_razred": 2,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Najstariji brat",
+      "odgovor": "Pavle"
+    }
+  ],
+  "salt": "1fb1d1921f1b819b",
+  "predmeti": [],
+  "uzrasti": []
+},
+{
+  "_id": {
+    "$oid": "65b825589f4385cb99743165"
+  },
+  "korisnicko_ime": "tea",
+  "lozinka": "b7b680bda4c955e0a4be8e816bd079be62d9cb1623e0b0dae6ab8399472ac729",
+  "tip": "ucenik",
+  "ime": "Teodora",
+  "prezime": "Sindjelic",
+  "pol": "Z",
+  "adresa": "Vracar 34",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "tea@gmail.com",
+  "tip_skole": "osnovna",
+  "trenutni_razred": 6,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Srednje ime oca",
+      "odgovor": "Branko"
+    }
+  ],
+  "salt": "7e1f3a45576dcb02",
+  "predmeti": [],
+  "uzrasti": []
+},
+{
+  "_id": {
+    "$oid": "65b829be9f4385cb9974316b"
+  },
+  "korisnicko_ime": "lena",
+  "lozinka": "cf9a10161f8960d92c7911790b8daa17bb48bcb11f54d4737dc9a18cb6bf30ac",
+  "tip": "ucenik",
+  "ime": "Lena",
+  "prezime": "Srejic",
+  "pol": "Z",
+  "adresa": "Terazije 1",
+  "kontakt_telefon": "+123123123123",
+  "email_adresa": "lena@gmail.com",
+  "tip_skole": "osnovna",
+  "trenutni_razred": 5,
+  "bezbednosno_pitanje": [
+    {
+      "pitanje": "Omiljena boja",
+      "odgovor": "pink"
+    }
+  ],
+  "salt": "231d0da06ed3cccb",
+  "predmeti": [],
+  "uzrasti": []
+}]

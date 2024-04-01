@@ -1,0 +1,249 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light justify-content-center">
+  <div class="container justify-content-center">
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('profil')">Profil</button> |
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('casovi')">Casovi</button> |
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('mojiUcenici')">Moji Ucenici</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div *ngIf="korisnik && korisnik!.status == 'blocked'" class="container">
+  <div class="alert alert-danger" role="alert">
+    Vas profil je blokiran
+  </div>
+</div>
+<div *ngIf="korisnik && korisnik!.status == 'pending'" class="container">
+  <div class="alert alert-warning" role="alert">
+    Vas profil je u procesu verifikacije
+  </div>
+</div>
+
+<div *ngIf="korisnik && korisnik!.status == 'active'" class="container">
+  <div class="row">
+    <div *ngIf="korisnik" class="container mt-4">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="profile-picture-container">
+            <img [src]="slikab" alt="Profilna slika" class="img-fluid profile-picture-zoom">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-info profile-info-column">
+            <h2>Dobrodosli, {{ oldKorisnik!.ime }} {{ oldKorisnik!.prezime }}!</h2>
+            <hr>
+            <p><strong>Ime:</strong> {{ oldKorisnik!.ime }}</p>
+            <p><strong>Prezime:</strong> {{ oldKorisnik!.prezime }}</p>
+            <p><strong>Adresa:</strong> {{ oldKorisnik!.adresa }}</p>
+            <p><strong>Email:</strong> {{ oldKorisnik!.email_adresa }}</p>
+            <p><strong>Kontakt Telefon:</strong> {{ oldKorisnik!.kontakt_telefon }}</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div *ngIf="opcija=='profil'" class="mb-3">
+    <button (click)="editProfile()" class="btn btn-primary">Uredi profil</button>
+    <div *ngIf="!isEditingProfile">
+      <hr>
+      <div>
+        <h5>Odabrani predmeti:</h5>
+        <ul>
+          <li *ngFor="let predmet of korisnik.predmeti">{{ predmet }}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Odabrani uzrasti:</h5>
+        <ul>
+          <li *ngFor="let uzrast of korisnik.uzrasti">{{ uzrast }}</li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="isEditingProfile">
+      <hr>
+      <h4>Uredi profil</h4>
+
+      <div class="form-group">
+        <label for="ime">Ime:</label>
+        <input type="text" id="ime" [(ngModel)]="korisnik.ime" name="ime" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="prezime">Prezime:</label>
+        <input type="text" id="prezime" [(ngModel)]="korisnik.prezime" name="prezime" required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="adresa">Adresa:</label>
+        <input type="text" id="adresa" [(ngModel)]="korisnik.adresa" name="adresa" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="korisnik.email_adresa" name="email" class="form-control">
+      <br>
+      </div>
+
+      <div class="form-group">
+        <label for="telefon">Kontakt Telefon:</label><br>
+        <input type="tel" id="telefon" [(ngModel)]="korisnik.kontakt_telefon" name="telefon" class="form-control">
+      </div>
+      <hr>
+      <div>
+        <div *ngFor="let predmet of sviPredmeti">
+          <div class="form-check">
+            <input type="checkbox" [value]="predmet.predmet" (change)="selectPredmet(predmet.predmet)" [checked]="korisnik.predmeti.includes(predmet.predmet)" class="form-check-input">
+            <label class="form-check-label">{{ predmet.predmet }}</label>
+          </div>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" value="Nesto Drugo" (change)="selectNoviPredmet()" [checked]="this.predmeti.includes(dodatnipredmet)"  class="form-check-input">
+          <label class="form-check-label">Nesto drugo</label>
+          <input type="text" placeholder="Unesite dodatni predmet" [(ngModel)]="dodatnipredmet" [disabled]="!!novi">
+        </div>
+      </div>
+      <hr>
+      <label for="ageGroups">Kom uzrastu zelite da predajete?</label>
+      <div>
+        <div *ngFor="let uzrast of sviuzrasti">
+          <div class="form-check">
+            <input type="checkbox" [value]="uzrast" (change)="selectUzrast(uzrast)" [checked]="korisnik.uzrasti.includes(uzrast)" class="form-check-input">
+            <label class="form-check-label">{{ uzrast }}</label>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="form-group">
+        <label for="profilnaSlika">Profilna Slika (file):</label>
+        <input type="file" (change)="promenaSlike($event)" accept="image/png, image/jpeg" class="form-control-file">
+      </div>
+      <br>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+        {{msg}}
+      </div>
+      <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+        {{msg}}
+      </div>
+
+      <button type="button" (click)="saveProfile()" class="btn btn-primary">Sacuvaj</button>
+      <button type="button" (click)="cancelEdit()" class="btn btn-secondary">Odustani</button>
+
+    </div>
+    <br>
+    <hr>
+  </div>
+
+  <div *ngIf="opcija == 'casovi'" class="mb-3">
+    <hr>
+    <h2>Casovi u narednih 3 dana</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pocetak</th>
+          <th>Kraj</th>
+          <th>Ucenik</th>
+          <th>Predmet</th>
+          <th>Pristupi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cas of buduciCasovi">
+          <td>{{ cas.vremeod | date: 'medium' }}</td>
+          <td>{{ cas.vremedo | date: 'medium' }}</td>
+          <td>{{ cas.ucenikPI }}</td>
+          <td>{{ cas.predmet }}</td>
+          <td>
+            <button *ngIf="provera15(cas)" (click)="udjiUUcionicu(cas)" class="btn btn-success btn-sm">Prikljuci se</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <h2>Zahtevi</h2>
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Ime Ucenika</th>
+            <th>Predmet</th>
+            <th>Komentar</th>
+            <th>Prosečna ocena</th>
+            <th>Pocetak</th>
+            <th>Kraj</th>
+            <th>Prihvati</th>
+            <th>Odbij</th>
+            <th>Obrazloženje</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let zahtev of zahtevi">
+          <td>{{ zahtev.ucenikPI }}</td>
+          <td>{{ zahtev.predmet }}</td>
+          <td>{{ zahtev.komentar }}</td>
+          <td> {{ getAverageOcena(zahtev.ucenik) }} </td>
+          <td>{{ zahtev.vremeod | date: 'medium' }}</td>
+          <td>{{ zahtev.vremedo  | date: 'medium' }}</td>
+          <td>
+            <button (click)="odobriZahtev(zahtev)" class="btn btn-success btn-sm">Prihvati</button>
+          </td>
+          <td>
+            <button (click)="odbijZahtev(zahtev)" class="btn btn-danger btn-sm">Odbij</button>
+          </td>
+          <td>
+            <input type="text" [(ngModel)]="zahtev.obrazlozenje" placeholder="Unesite obrazlozenje" class="form-control">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+      {{msg}}
+    </div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+      {{msg}}
+    </div>
+
+  </div>
+
+  <div *ngIf="opcija=='obavestenja'">
+  </div>
+
+  <div *ngIf="opcija == 'mojiUcenici'" class="mb-3">
+    <hr>
+    <h2>Moji učenici</h2>
+    <table class="table">
+      <thead>
+          <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of mojiUcenici">
+          <td><a [routerLink]="['/student', student.korisnicko_ime]">{{ student.ime }}</a></td>
+          <td><a [routerLink]="['/student', student.korisnicko_ime]">{{ student.prezime }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+
+
+

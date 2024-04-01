@@ -1,0 +1,129 @@
+<div class="container mt-4">
+  <div class="row justify-content-center mt-4">
+    <!--<div class="col-md-8 col-sm-12">
+      <ul class="list-inline">
+        <li class="list-inline-item mr-3">
+          <a (click)="registerUcenik()" class="text-primary">Registracija ucenik</a>
+        </li>
+        <li class="list-inline-item mr-3">
+          <a (click)="registerNastavnik()" class="text-primary">Registracija nastavnik</a>
+        </li>
+        <li class="list-inline-item">
+          <a (click)="promenaLozinke()" class="text-primary">Promeni lozinku</a>
+        </li>
+      </ul>
+    </div>
+    <hr>-->
+    <div class="col-md-6 login-form">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="username">Korisnicko ime:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Lozinka:</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password">
+      </div>
+      <div class="form-group">
+        <label for="type">Tip:</label>
+        <select class="form-control" id="type" [(ngModel)]="type">
+          <option value="ucenik">Ucenik</option>
+          <option value="nastavnik">Nastavnik</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-block" (click)="login()">Uloguj se</button>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="msg!=''">
+        {{msg}}
+      </div>
+      <hr>
+    </div>
+    <div class="col-md-6">
+      <h2>Na našem sajtu</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Broj ucenika: {{ brUcenika }}</li>
+        <li class="list-group-item">Broj aktivnih nastavnika: {{ brNastavnika }}</li>
+        <li class="list-group-item">Broj casova poslednjih 7 dana: {{ casovi7dana }}</li>
+        <li class="list-group-item">Broj casova poslednjih mesec dana: {{ casovimesecdana }}</li>
+      </ul>
+      <hr>
+    </div>
+
+
+
+  </div>
+
+  <div class="row mt-4">
+    <br>
+
+    <div class="col-md">
+      <h2>Informacije o predmetima</h2>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Predmet</th>
+            <th scope="col">Nastavnici</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subject of allPredmeti">
+            <td>{{ subject.predmet }}</td>
+            <td>{{ subject.profesor.join(', ') }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <hr>
+  <div class="container">
+    <h2>Pretraga nastavnika</h2>
+    <div class="form-group">
+      <label for="searchParamIme">Ime:</label>
+      <input type="text" class="form-control" id="searchParamIme" [(ngModel)]="searchParamIme" />
+    </div>
+    <div class="form-group">
+      <label for="searchParamPrezime">Prezime:</label>
+      <input type="text" class="form-control" id="searchParamPrezime" [(ngModel)]="searchParamPrezime" />
+    </div>
+    <div class="form-group">
+      <label for="searchParamPredmeti">Predmet:</label>
+      <input type="text" class="form-control" id="searchParamPredmeti" [(ngModel)]="searchParamPredmeti" />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="search()">Pretrazi</button>
+    <br>
+    <br>
+    <div class="form-inline">
+      <label class="mr-2">Sortiraj po:</label>
+      <select class="form-control mr-2" [(ngModel)]="sortOption" (change)="sort()">
+        <option value="ime">Ime</option>
+        <option value="prezime">Prezime</option>
+        <option value="predmet">Predmet</option>
+      </select>
+      <label class="mr-2">Redosled:</label>
+      <select class="form-control" [(ngModel)]="sortOrder" (change)="sort()">
+        <option value="asc">Neopadajuce</option>
+        <option value="desc">Nerastuce</option>
+      </select>
+    </div>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>Predmeti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of actNastavnici">
+          <td>{{ teacher.ime }}</td>
+          <td>{{ teacher.prezime }}</td>
+          <td>{{ teacher.predmeti.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

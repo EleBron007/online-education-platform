@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Dosije</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-picture-container">
+        <img [src]="slikab" alt="Profilna slika" class="img-fluid profile-picture">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3>Informacije</h3>
+        <p><strong>Ime:</strong> {{ ucenik!.ime }}</p>
+        <p><strong>Prezime:</strong> {{ ucenik!.prezime }}</p>
+        <p><strong>Email:</strong> {{ ucenik!.email_adresa }}</p>
+        <p><strong>Broj telefona:</strong> {{ ucenik!.kontakt_telefon }}</p>
+    </div>
+  </div>
+
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Predmet</th>
+        <th>Ucenik</th>
+        <th>Vremeod</th>
+        <th>Ocena</th>
+        <th>Komentar</th>
+        <th>Oceni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let lesson of prosliCasovi">
+        <tr *ngIf="lesson.predmet !== null">
+          <td>{{ lesson.predmet }}</td>
+          <td>{{lesson.ucenikPI}}</td>
+          <td>{{ lesson.vremedo | date: 'short' }}</td>
+          <td>
+            <select [(ngModel)]="lesson.ocena" [disabled]="lesson.ocenjen" class="form-control">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <textarea [(ngModel)]="lesson.obrazlozenje" [disabled]="lesson.ocenjen" class="form-control"></textarea>
+          </td>
+          <td><button (click)="updateCas(lesson)" [disabled]="lesson.ocenjen" class="btn btn-primary">Posalji</button></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <div class="alert alert-danger text-center mt-3" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+    {{msg}}
+  </div>
+  <div class="alert alert-success text-center mt-3" role="alert" *ngIf="msg=='Uspeh'">
+    {{msg}}
+  </div>
+</div>

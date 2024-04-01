@@ -1,0 +1,182 @@
+<div class="container">
+  <h2>Dobrodošli, {{ korisnik?.ime }} {{ korisnik?.prezime }} (Admin)!</h2>
+
+  <div class="row">
+    <div class="col-md-6 chart-column">
+      <h3>Statistika</h3>
+      <p>Statistika nastavnika</p>
+      <app-chart [chartData1]="chartData1"></app-chart>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Nastavnici po polu</p>
+          <app-chart [chartData2]="chartData2"></app-chart>
+        </div>
+        <div class="col-md-6">
+          <p>Ucenici po polu</p>
+          <app-chart [chartData3]="chartData3"></app-chart>
+        </div>
+      </div>
+      <p>Casovi po danu u nedelji 2023 - prosek</p>
+      <app-chart [chartData4]="chartData4"></app-chart>
+
+      <p>Najangazovaniji profesori - prosek po mesecima</p>
+      <app-chart [chartData5]="chartData5"></app-chart>
+
+      <p>Prihvaceni i odbijeni casovi - broj po mesecima u 2023</p>
+      <app-chart [chartData6]="chartData6"></app-chart>
+
+      <p>Ukupan broj prihvacenih i odbijenih casova - ikad</p>
+      <app-chart [chartData7]="chartData7"></app-chart>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Ucenici: svi</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Korisnicko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ucenik of allUcenici">
+            <td>{{ ucenik.korisnicko_ime }}</td>
+            <td>{{ ucenik.ime }}</td>
+            <td>{{ ucenik.prezime }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Nastavnici: Zahtevi na cekanju</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Korisnicko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nastavnik of allZahtevi">
+            <td>{{ nastavnik.korisnicko_ime }}</td>
+            <td>{{ nastavnik.ime }}</td>
+            <td>{{ nastavnik.prezime }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="blokirajNastavnik(nastavnik)">Blokiraj</button>
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="odobriNastavnik(nastavnik)">Odobri</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Nastavnici: Svi</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Korisnicko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nastavnik of allNastavnici">
+            <td>{{ nastavnik.korisnicko_ime }}</td>
+            <td>{{ nastavnik.ime }}</td>
+            <td>{{ nastavnik.prezime }}</td>
+            <td>{{ nastavnik.status }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="blokirajNastavnik(nastavnik)" [disabled]="nastavnik.status =='blocked'">Blokiraj</button>
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="odobriNastavnik(nastavnik)" [disabled]="nastavnik.status =='active'">Odobri</button>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="izmeniNastavnik(nastavnik)">Izmeni</button>
+            </td>
+            <td>
+              <button class="btn btn-warning" (click)="preuzmiCV(nastavnik)">Preuzmi CV</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class = "row">
+        <div class="col-md-6">
+          <h2>Predmeti</h2>
+          <div>
+            <h3>Svi predmeti:</h3>
+            <ul class="list-group">
+              <li *ngFor="let predmet of allPredmeti">{{ predmet.predmet }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h3>Dodaj novi:</h3>
+          <table class="table">
+            <tbody>
+              <tr *ngFor="let predmet of specijalniPredmeti">
+                <td>{{predmet}}</td>
+                <td><button class="btn btn-primary" (click)="addNewPredmet1(predmet)">Dodaj</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <label for="newPredmet">Novi predmet:</label>
+          <input type="text" id="newPredmet" [(ngModel)]="newPredmet" required class="form-control">
+          <button type="submit" class="btn btn-primary" (click)="addNewPredmet()">Dodaj</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+          {{msg}}
+        </div>
+        <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+          {{msg}}
+        </div>
+    </div>
+
+
+<!--
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Predmeti</h2>
+      <div>
+        <h3>Svi predmeti:</h3>
+        <ul class="list-group">
+          <li *ngFor="let predmet of allPredmeti">{{ predmet.predmet }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <h3>Dodaj novi:</h3>
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let predmet of specijalniPredmeti">
+            <td>{{predmet}}</td>
+            <td><button class="btn btn-primary" (click)="addNewPredmet1(predmet)">Dodaj</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <label for="newPredmet">Novi predmet:</label>
+      <input type="text" id="newPredmet" [(ngModel)]="newPredmet" required class="form-control">
+      <button type="submit" class="btn btn-primary" (click)="addNewPredmet()">Dodaj</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+      {{msg}}
+    </div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+      {{msg}}
+    </div>
+-->
+  </div>
+</div>

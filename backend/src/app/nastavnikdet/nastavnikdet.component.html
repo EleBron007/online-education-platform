@@ -1,0 +1,63 @@
+<div *ngIf="nastavnik && nastavnik!.status == 'active'" class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-picture-container">
+        <img [src]="slikab" alt="Profilna slika" class="img-fluid profile-picture">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h1>{{ nastavnik.ime }} {{ nastavnik.prezime }}</h1>
+      <hr>
+      <div>
+        <h3>Informacije</h3>
+        <p>Email: {{ nastavnik.email_adresa }}</p>
+        <p>Broj telefona: {{ nastavnik.kontakt_telefon }}</p>
+      </div>
+      <hr>
+      <div>
+        <h3>Predmeti</h3>
+        <ul>
+          <li *ngFor="let subject of nastavnik.predmeti">{{ subject }}</li>
+        </ul>
+      </div>
+      <hr>
+      <div>
+        <h3>Ocene i komentari</h3>
+
+        <p>...</p>
+      </div>
+      <div *ngIf="ucenik && ucenik.tip === 'ucenik'">
+        <button>Ostavite ocenu</button>
+      </div>
+      <hr>
+      <div *ngIf="ucenik && ucenik.tip === 'ucenik'">
+        <h3>Zakazi cas</h3>
+        <form (ngSubmit)="zakaziCas()">
+          <label>Predmet :</label>
+          <select id="subject" name="subject" [(ngModel)]="odabraniPr" [disabled]="nastavnik.predmeti.length === 1" class="form-control">
+            <option *ngFor="let pr of nastavnik.predmeti" [value]="pr">{{ pr }}</option>
+          </select>
+
+          <label for="dateTime">Datum i vreme :</label>
+          <input type="datetime-local" id="dateTime" name="dateTime" [(ngModel)]="odabranoVremeOd" required class="form-control">
+          <br>
+          <label for="topic">Komentar :</label> <br>
+          <textarea id="topic" name="topic" [(ngModel)]="komentar" rows="3" cols="50" class="form-control"></textarea>
+          <br>
+          <label for="dupli">Zelim dupli cas </label> :
+          <input type="checkbox" id="dupli" name="dupli" [(ngModel)]="dupli">
+          <br>
+          <br>
+          <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+            {{msg}}
+          </div>
+          <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+            {{msg}}
+          </div>
+          <button type="submit" class="btn btn-primary">Zakazi</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

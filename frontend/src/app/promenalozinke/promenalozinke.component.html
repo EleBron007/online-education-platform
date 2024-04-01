@@ -1,0 +1,45 @@
+<div class="container mt-4" *ngIf="promena">
+  <h2>Promena Lozinke</h2>
+  <form (ngSubmit)="promeniLozinku()">
+    <div class="form-group">
+      <label for="username">Korisnicko ime:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="oldPassword">Stara Lozinka:</label>
+      <input type="password" id="oldPassword" name="oldPassword" [(ngModel)]="oldPassword" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="newPassword">Nova Lozinka:</label>
+      <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Potvrdite Novu Lozinku:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required class="form-control">
+    </div>
+
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+      {{msg}}
+    </div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+      {{msg}}
+    </div>
+
+    <button (click)="pocetna()" class="btn btn-secondary">Pocetna</button>
+
+    <button type="submit" class="btn btn-primary">Promeni Lozinku</button>
+  </form>
+</div>
+<hr>
+
+<div class="container registration-step-two" *ngIf="!promena">
+  <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+    {{msg}}
+  </div>
+  <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+    {{msg}}
+  </div>
+  <button (click)="pocetna()" class="btn btn-secondary">Pocetna</button>
+
+</div>

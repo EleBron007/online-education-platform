@@ -1,0 +1,106 @@
+
+
+<div class="container" *ngIf="!sent">
+  <h2>Ucenik registracija</h2>
+  <form>
+    <div class="form-group">
+      <label for="korisnickoIme">Korisnicko Ime:</label>
+      <input type="text" id="korisnickoIme" [(ngModel)]="ucenik.korisnicko_ime" name="korisnickoIme" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="lozinka">Lozinka:</label>
+      <input type="password" id="lozinka" [(ngModel)]="ucenik.lozinka" name="lozinka" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="bezbednosnoPitanje">Bezbednosno Pitanje:</label>
+      <input type="text" id="bezbednosnoPitanje" [(ngModel)]="pitanje" name="bezbednosnoPitanje" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="bezbednosniOdgovor">Bezbednosni Odgovor:</label>
+      <input type="text" id="bezbednosniOdgovor" [(ngModel)]="odgovor" name="bezbednosniOdgovor" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="ime">Ime:</label>
+      <input type="text" id="ime" [(ngModel)]="ucenik.ime" name="ime" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="prezime">Prezime:</label>
+      <input type="text" id="prezime" [(ngModel)]="ucenik.prezime" name="prezime" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Pol:</label>
+      <div class="form-check">
+        <input type="radio" id="polM" value="M" [(ngModel)]="ucenik.pol" name="pol" required class="form-check-input">
+        <label for="polM" class="form-check-label">M</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" id="polZ" value="Z" [(ngModel)]="ucenik.pol" name="pol" required class="form-check-input">
+        <label for="polZ" class="form-check-label">Z</label>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="adresa">Adresa:</label>
+      <input type="text" id="adresa" [(ngModel)]="ucenik.adresa" name="adresa" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="kontaktTelefon">Kontakt Telefon:</label>
+      <input type="text" id="kontaktTelefon" [(ngModel)]="ucenik.kontakt_telefon" name="kontaktTelefon" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="emailAdresa">Email Adresa:</label>
+      <input type="email" id="emailAdresa" [(ngModel)]="ucenik.email_adresa" name="emailAdresa" required class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="profilnaSlika">Profilna Slika (file):</label>
+      <input type="file" (change)="promenaSlike($event)" accept="image/png, image/jpg" class="form-control-file">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="tipSkole">Tip Skole:</label>
+      <select id="tipSkole" [(ngModel)]="ucenik.tip_skole" name="tipSkole" required class="form-control">
+        <option value="osnovna">Osnovna škola</option>
+        <option value="srednja-gimnazija">Srednja gimnazija</option>
+        <option value="srednja-strucna">Srednja stručna škola</option>
+        <option value="srednja-umetnicka">Srednja umetnička škola</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="trenutniRazred">Trenutni Razred:</label>
+      <input type="number" id="trenutniRazred" [(ngModel)]="ucenik.trenutni_razred" name="trenutniRazred" required class="form-control">
+    </div>
+    <br>
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+      {{msg}}
+    </div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+      {{msg}}
+    </div>
+
+    <button (click)="registerUcenik()" class="btn btn-primary">Register</button>
+  </form>
+</div>
+<hr>
+
+<div class="container registration-step-two" *ngIf="sent">
+  <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+    {{msg}}
+  </div>
+  <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+    {{msg}}
+  </div>
+  <button (click)="pocetna()" class="btn btn-secondary">Pocetna</button>
+
+</div>
+
+  <!--
+<label for="profilnaSlika">Profilna Slika (file):</label>
+    <input type="file" (change)="promenaSlike1($event)" accept="image/png, image/jpeg">
+<br>
+<button (click)="registrujUcenik1()">Postavi</button>
+<button (click)="dohvatiSliku1()">Dohvati</button>
+</form>
+<img [src]="slikab" alt="Profilna slika">
+-->

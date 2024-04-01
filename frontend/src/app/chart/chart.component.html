@@ -1,0 +1,43 @@
+<div class="chart-container">
+  <div *ngIf="chartData1" class="chart-wrapper">
+    <canvas #chartCanvas1 baseChart [datasets]="chartData1.datasets" [labels]="chartData1.labels" [options]="chartData1.options" [legend]="chartData1.legend" type="bar"></canvas>
+  </div>
+  <div *ngIf="chartData2" class="chart-wrapper">
+    <canvas #chartCanvas2 baseChart [datasets]="chartData2.datasets" [labels]="chartData2.labels" [options]="chartData2.options" [legend]="chartData2.legend" type="pie"></canvas>
+  </div>
+  <div *ngIf="chartData3" class="chart-wrapper">
+    <canvas #chartCanvas3 baseChart [datasets]="chartData3.datasets" [labels]="chartData3.labels" [options]="chartData3.options" [legend]="chartData3.legend" type="pie"></canvas>
+  </div>
+  <div *ngIf="chartData4" class="chart-wrapper">
+    <canvas #chartCanvas4 baseChart [datasets]="chartData4.datasets" [labels]="chartData4.labels" [options]="chartData4.options" [legend]="chartData4.legend" type="bar"></canvas>
+  </div>
+  <div *ngIf="chartData5" class="chart-wrapper">
+    <canvas #chartCanvas5 baseChart [datasets]="chartData5.datasets" [labels]="chartData5.labels" [options]="chartData5.options" [legend]="chartData5.legend" type="line"></canvas>
+  </div>
+  <div *ngIf="chartData6" class="chart-wrapper">
+    <canvas #chartCanvas6 baseChart [datasets]="chartData6.datasets" [labels]="chartData6.labels" [options]="chartData6.options" [legend]="chartData6.legend" type="line"></canvas>
+  </div>
+
+  <div *ngIf="chartData7" class="chart-wrapper">
+    <canvas #chartCanvas7 baseChart [datasets]="chartData7.datasets" [labels]="chartData7.labels" [options]="chartData7.options" [legend]="chartData7.legend" type="pie"></canvas>
+  </div>
+</div>
+
+
+<!--
+<div *ngIf="chartData1">
+  <canvas #chartCanvas1 baseChart [datasets]="chartData1.datasets" [labels]="chartData1.labels" [options]="chartData1.options" [legend]="chartData1.legend" type="bar"></canvas>
+</div>
+<div *ngIf="chartData2">
+  <canvas #chartCanvas2 baseChart [datasets]="chartData2.datasets" [labels]="chartData2.labels" [options]="chartData2.options" [legend]="chartData2.legend" type="pie"></canvas>
+</div>
+<div *ngIf="chartData3">
+  <canvas #chartCanvas3 baseChart [datasets]="chartData3.datasets" [labels]="chartData3.labels" [options]="chartData3.options" [legend]="chartData3.legend" type="pie"></canvas>
+</div>
+<div *ngIf="chartData4">
+  <canvas #chartCanvas4 baseChart [datasets]="chartData4.datasets" [labels]="chartData4.labels" [options]="chartData4.options" [legend]="chartData4.legend" type="bar"></canvas>
+</div>
+<div *ngIf="chartData5">
+  <canvas #chartCanvas5 baseChart [datasets]="chartData5.datasets" [labels]="chartData5.labels" [options]="chartData5.options" [legend]="chartData5.legend" type="line"></canvas>
+</div>
+-->

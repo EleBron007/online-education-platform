@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c6e"
+  },
+  "predmet": "Matematika"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c6f"
+  },
+  "predmet": "Fizika"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c70"
+  },
+  "predmet": "Hemija"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c71"
+  },
+  "predmet": "Informatika"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c72"
+  },
+  "predmet": "Programiranje"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c73"
+  },
+  "predmet": "Srpski jezik i književnost"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c74"
+  },
+  "predmet": "Engleski jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c75"
+  },
+  "predmet": "Nemački jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c76"
+  },
+  "predmet": "Italijanski jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c77"
+  },
+  "predmet": "Francuski jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c78"
+  },
+  "predmet": "Španski jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c79"
+  },
+  "predmet": "Latinski jezik"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c7a"
+  },
+  "predmet": "Biologija"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c7b"
+  },
+  "predmet": "Istorija"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c7c"
+  },
+  "predmet": "Geografija"
+},
+{
+  "_id": {
+    "$oid": "65b0fbad7f9af0472d740c7d"
+  },
+  "predmet": "Svet oko nas"
+},
+{
+  "_id": {
+    "$oid": "65b62ce6cf8ea280c0af0e30"
+  },
+  "predmet": "IOA",
+  "nastavnik": []
+},
+{
+  "_id": {
+    "$oid": "65b7be51af592eb9270e6706"
+  },
+  "predmet": "PIA",
+  "nastavnik": []
+}]

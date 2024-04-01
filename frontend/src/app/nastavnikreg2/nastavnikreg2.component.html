@@ -1,0 +1,65 @@
+
+<div class="container registration-step-two" *ngIf="!sent">
+  <h2 class="mt-4">Nastavnik registracija / Korak 2</h2>
+  <hr>
+  <div class="form-group">
+    <label for="cv">Dodajte CV (PDF):</label>
+    <input type="file" (change)="promenaCV($event)" accept="application/pdf" required class="form-control-file">
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <label for="subjects">Odaberite predmete:</label>
+    <div *ngFor="let predmet of svipredmeti">
+      <div class="form-check">
+        <input type="checkbox" [value]="predmet.predmet" (change)="selectPredmet(predmet.predmet)" class="form-check-input">
+        <label class="form-check-label">{{ predmet.predmet }}</label>
+      </div>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" value="Nesto Drugo" (change)="selectNoviPredmet()" class="form-check-input">
+      <label class="form-check-label">Nesto drugo</label>
+      <input type="text" placeholder="Unesite drugi predmet" [(ngModel)]="dodatnipredmet" [disabled]="!!novi" class="form-control">
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <label for="ageGroups">Kom uzrastu zelite da predajete?</label>
+    <div *ngFor="let uzrast of sviuzrasti">
+      <div class="form-check">
+        <input type="checkbox" [value]="uzrast" (change)="selectUzrast(uzrast)" class="form-check-input">
+        <label class="form-check-label">{{ uzrast }}</label>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <label for="izvorpitanje">Gde ste culi za nas sajt?</label>
+    <input type="text" [(ngModel)]="izvorpitanje" class="form-control">
+  </div>
+  <hr>
+  <br>
+  <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+    {{msg}}
+  </div>
+  <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+    {{msg}}
+  </div>
+
+  <button (click)="registerNastavnik()" class="btn btn-primary">Registruj se</button>
+
+  <button (click)="pocetna()" class="btn btn-secondary">Pocetna</button>
+</div>
+
+<div class="container registration-step-two" *ngIf="sent">
+  <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+    {{msg}}
+  </div>
+  <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+    {{msg}}
+  </div>
+  <button (click)="pocetna()" class="btn btn-secondary">Pocetna</button>
+
+</div>

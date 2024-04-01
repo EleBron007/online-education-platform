@@ -1,0 +1,503 @@
+[{
+  "_id": {
+    "$oid": "65ad2d2c734b187d765cb001"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "mate",
+  "ucenikPI": "Mate Matic",
+  "predmet": "Nemački jezik",
+  "komentar": "",
+  "ocena": 4,
+  "vremeod": "2023-01-20T03:41",
+  "vremedo": "2023-01-20T04:41:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65ad2d7a734b187d765cb007"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "elebron",
+  "ucenikPI": "Elena Sladojevic",
+  "predmet": "Nemački jezik",
+  "komentar": "",
+  "ocena": 2,
+  "vremeod": "2023-01-15T08:44",
+  "vremedo": "2023-01-15T09:44:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": false
+},
+{
+  "_id": {
+    "$oid": "65ad2d8e734b187d765cb00d"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "mate",
+  "ucenikPI": "Mate Matic",
+  "predmet": "Nemački jezik",
+  "komentar": "Pomozite",
+  "ocena": 3,
+  "vremeod": "2023-01-15T08:43",
+  "vremedo": "2023-01-15T09:43:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "IDM\n",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65ad2d9d734b187d765cb013"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "miki",
+  "ucenikPI": "Miki Mikic",
+  "predmet": "Nemački jezik",
+  "komentar": "",
+  "ocena": 0,
+  "vremeod": "2023-01-23T06:45",
+  "vremedo": "2023-01-23T07:45:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "xfvfs"
+},
+{
+  "_id": {
+    "$oid": "65b40a1b3385cbf9388cc5ae"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mate Matic",
+  "predmet": "Fizika",
+  "komentar": "",
+  "ocena": 4,
+  "vremeod": "2023-01-28T00:40",
+  "vremedo": "2023-01-28T02:40:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b40a6e3385cbf9388cc5b6"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mate Matic",
+  "predmet": "OOP",
+  "komentar": "",
+  "ocena": 5,
+  "vremeod": "2023-01-29T21:40",
+  "vremedo": "2023-01-29T22:40:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "NaN",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b5b1470a6406b3c9d6f9fe"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "",
+  "ocena": 4,
+  "vremeod": "2023-01-29T18:45",
+  "vremedo": "2023-01-29T20:45:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b79f60af592eb9270e6475"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "",
+  "ocena": 5,
+  "vremeod": "2023-01-31T14:00",
+  "vremedo": "2023-01-31T16:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b79f89af592eb9270e6479"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "AAAAAAAAAA",
+  "ocena": 5,
+  "vremeod": "2023-02-01T14:00",
+  "vremedo": "2023-02-01T16:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b79fafaf592eb9270e647d"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "AAAAAAAAAAAA",
+  "ocena": 0,
+  "vremeod": "2023-02-02T15:00",
+  "vremedo": "2023-02-02T16:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "denied",
+  "obrazlozenje": "nepotrebna oblast",
+  "ocenjen": false
+},
+{
+  "_id": {
+    "$oid": "65b7a2b3af592eb9270e64d0"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Informatika",
+  "komentar": "Istorija racunarstva",
+  "ocena": 5,
+  "vremeod": "2023-02-04T19:00",
+  "vremedo": "2023-02-04T21:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b7a2d3af592eb9270e64d4"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Hemija",
+  "komentar": "Molekuli ",
+  "ocena": 5,
+  "vremeod": "2023-02-04T17:59",
+  "vremedo": "2023-02-04T18:59:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b7aa2caf592eb9270e65c2"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "Trigonometrija",
+  "ocena": 4,
+  "vremeod": "2023-03-12T16:00",
+  "vremedo": "2023-03-12T18:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b84f9e9f4385cb99743208"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "546",
+  "ocena": 4,
+  "vremeod": "2023-01-31T18:00",
+  "vremedo": "2023-01-31T19:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b850e89f4385cb9974320e"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "5",
+  "ocena": 4,
+  "vremeod": "2023-02-02T14:29",
+  "vremedo": "2023-02-02T15:29:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b851459f4385cb9974321a"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "C",
+  "ocena": 4,
+  "vremeod": "2023-02-15T16:30",
+  "vremedo": "2023-02-15T17:30:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b857fc9f4385cb99743244"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Hemija",
+  "komentar": "Benzen",
+  "ocena": 5,
+  "vremeod": "2023-02-28T16:00",
+  "vremedo": "2023-02-28T17:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b8580d9f4385cb99743248"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Hemija",
+  "komentar": "Ugljovodonici",
+  "ocena": 5,
+  "vremeod": "2023-02-22T16:00",
+  "vremedo": "2023-02-22T18:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b8583a9f4385cb9974324c"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Informatika",
+  "komentar": "Backtracking",
+  "ocena": 5,
+  "vremeod": "2023-04-17T17:00",
+  "vremedo": "2023-04-17T17:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b858529f4385cb99743250"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "mate",
+  "ucenikPI": "Mateja Matic",
+  "predmet": "Matematika",
+  "komentar": "Priprema za zavrsni ispit",
+  "ocena": 5,
+  "vremeod": "2023-06-10T16:00",
+  "vremedo": "2023-06-10T17:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b858e79f4385cb997432ab"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Španski jezik",
+  "komentar": "Glagoli",
+  "ocena": 3,
+  "vremeod": "2023-08-20T16:00",
+  "vremedo": "2023-08-20T16:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b859029f4385cb997432af"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Matematika",
+  "komentar": "Heronov obrazac",
+  "ocena": 3,
+  "vremeod": "2023-06-28T07:00",
+  "vremedo": "2023-06-28T08:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b859199f4385cb997432b3"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Fizika",
+  "komentar": "Gravitaciono polje",
+  "ocena": 3,
+  "vremeod": "2023-07-18T09:00",
+  "vremedo": "2023-07-18T10:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b861f39f4385cb99743348"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Matematika",
+  "komentar": "Trigonometrija",
+  "ocena": 5,
+  "vremeod": "2023-10-30T16:30",
+  "vremedo": "2023-10-30T18:30:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b8621a9f4385cb9974334c"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Matematika",
+  "komentar": "Vezbanje za test",
+  "ocena": 5,
+  "vremeod": "2024-01-29T08:10",
+  "vremedo": "2024-01-29T10:10:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b862319f4385cb99743350"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Matematika",
+  "komentar": "Vezbanje za pismeni",
+  "ocena": 4,
+  "vremeod": "2024-01-14T07:45",
+  "vremedo": "2024-01-14T09:45:00.000Z",
+  "dupli": true,
+  "prihvacen": "accepted",
+  "obrazlozenje": "",
+  "ocenjen": true
+},
+{
+  "_id": {
+    "$oid": "65b862559f4385cb99743354"
+  },
+  "nastavnik": "miha",
+  "nastavnikPI": "Mihailo Tomasevic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Informatika",
+  "komentar": "Vezbanje binarnih brojeva",
+  "ocena": 0,
+  "vremeod": "2023-12-12T08:00",
+  "vremedo": "2023-12-12T09:00:00.000Z",
+  "dupli": false,
+  "prihvacen": "denied",
+  "obrazlozenje": "Nepotrebno",
+  "ocenjen": false
+},
+{
+  "_id": {
+    "$oid": "65b8627b9f4385cb9974335e"
+  },
+  "nastavnik": "choda",
+  "nastavnikPI": "David Popovic",
+  "ucenik": "zika",
+  "ucenikPI": "Zika Zivojinovic",
+  "predmet": "Španski jezik",
+  "komentar": "Price",
+  "ocena": 0,
+  "vremeod": "2024-07-16T06:00",
+  "vremedo": "2024-07-16T07:00:00.000Z",
+  "dupli": true,
+  "prihvacen": "pending",
+  "obrazlozenje": "",
+  "ocenjen": false
+}]

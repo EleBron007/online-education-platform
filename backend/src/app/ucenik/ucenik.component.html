@@ -1,0 +1,237 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+  <div class="container justify-content-center">
+    <div class="navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('profil')">Profil</button> |
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('nastavnici')">Nastavnici</button> |
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('casovi')">Casovi</button> |
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link text-dark" (click)="change('obavestenja')">Obavestenja</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div *ngIf="korisnik" class="container mt-4">
+  <div class="row">
+    <div *ngIf="korisnik" class="container mt-4">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="profile-picture-container">
+            <img [src]="slikab" alt="Profilna slika" class="img-fluid profile-picture-zoom">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-info profile-info-column">
+            <h2>Dobrodosli, {{ oldKorisnik!.ime }} {{ oldKorisnik!.prezime }}!</h2>
+            <hr>
+            <p><strong>Ime:</strong> {{ oldKorisnik!.ime }}</p>
+            <p><strong>Prezime:</strong> {{ oldKorisnik!.prezime }}</p>
+            <p><strong>Adresa:</strong> {{ oldKorisnik!.adresa }}</p>
+            <p><strong>Email:</strong> {{ oldKorisnik!.email_adresa }}</p>
+            <p><strong>Kontakt Telefon:</strong> {{ oldKorisnik!.kontakt_telefon }}</p>
+            <p><strong>Tip skole:</strong> {{ oldKorisnik!.tip_skole }}</p>
+            <p><strong>Razred:</strong> {{ oldKorisnik!.trenutni_razred }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div *ngIf="opcija=='profil'" class="mb-3">
+
+      <button (click)="editProfile()" class="btn btn-primary">Uredi profil</button>
+
+      <div *ngIf="isEditingProfile" class="profil-edit">
+        <hr>
+        <h4>Uredi profil</h4>
+
+        <div class="form-group">
+          <label for="ime">Ime:</label>
+          <input type="text" id="ime" [(ngModel)]="korisnik.ime" name="ime" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="prezime">Prezime:</label>
+          <input type="text" id="prezime" [(ngModel)]="korisnik.prezime" name="prezime" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="adresa">Adresa:</label>
+          <input type="text" id="adresa" [(ngModel)]="korisnik.adresa" name="adresa" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="korisnik.email_adresa" name="email" class="form-control">
+          <br>
+        </div>
+
+        <div class="form-group">
+          <label for="telefon">Kontakt Telefon:</label>
+          <input type="tel" id="telefon" [(ngModel)]="korisnik.kontakt_telefon" name="telefon" class="form-control">
+        <br>
+        </div>
+
+        <div class="form-group">
+          <label for="tipSkole">Tip skole:</label>
+          <select id="tipSkole" [(ngModel)]="korisnik.tip_skole" name="tipSkole" class="form-control">
+            <option value="osnovna">Osnovna škola</option>
+            <option value="srednja-gimnazija">Srednja gimnazija</option>
+            <option value="srednja-strucna">Srednja stručna škola</option>
+            <option value="srednja-umetnicka">Srednja umetnička škola</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Razred:</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-secondary" (click)="incrementGrade()">Uvecaj</button>
+            </span>
+            <input type="text" [(ngModel)]="korisnik.trenutni_razred" class="form-control" disabled>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="profilnaSlika">Profilna Slika (file):</label>
+          <input type="file" (change)="promenaSlike($event)" accept="image/png, image/jpeg" class="form-control-file">
+        </div>
+        <br>
+
+        <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+          {{msg}}
+        </div>
+        <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+          {{msg}}
+        </div>
+        <br>
+
+        <button type="button" (click)="saveProfile()" class="btn btn-primary">Sacuvaj</button>
+        <button type="button" (click)="cancelEdit()" class="btn btn-secondary">Odustani</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="opcija == 'nastavnici'" class="container mt-4">
+  <h2>Pretraga nastavnika</h2>
+  <div class="form-group">
+    <label>Ime:</label>
+    <input type="text" [(ngModel)]="searchParamIme" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Prezime:</label>
+    <input type="text" [(ngModel)]="searchParamPrezime" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Predmet</label>
+    <input type="text" [(ngModel)]="searchParamPredmeti" class="form-control"/>
+  </div>
+  <button (click)="search()" class="btn btn-primary">Pretrazi</button>
+  <br>
+  <hr>
+
+  <div class="form-group">
+    <label>Sortiraj:</label>
+    <hr>
+    <select [(ngModel)]="sortOption" (change)="sort()" class="form-control">
+      <option value="ime">Ime</option>
+      <option value="prezime">Prezime</option>
+      <option value="predmet">Predmet</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select [(ngModel)]="sortOrder" (change)="sort()" class="form-control">
+      <option value="asc">Neopadajuce</option>
+      <option value="desc">Nerastuce</option>
+    </select>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Predmeti</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of actNastavnici">
+        <td><a [routerLink]="['/teacher', teacher.korisnicko_ime]">{{ teacher.ime }}</a></td>
+        <td><a [routerLink]="['/teacher', teacher.korisnicko_ime]">{{ teacher.prezime }}</a></td>
+        <td>{{ teacher.predmeti.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+</div>
+
+<div *ngIf="opcija == 'casovi'" class="container mt-4">
+  <h2>Arhiva</h2>
+  <br>
+  <h4>Prosli casovi</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Pocetak</th>
+        <th>Kraj</th>
+        <th>Nastavnik</th>
+        <th>Predmet</th>
+        <th>Komentar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cas of prosliCasovi">
+        <td>{{ cas.vremeod | date: 'medium' }}</td>
+        <td>{{ cas.vremedo | date: 'medium' }}</td>
+        <td>{{ cas.nastavnikPI }}</td>
+        <td>{{ cas.predmet }}</td>
+        <td>{{ cas.komentar }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <h4>Buduci casovi</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pocetak</th>
+          <th>Kraj</th>
+          <th>Nastavnik</th>
+          <th>Predmet</th>
+          <th>Komentar</th>
+          <th>Pristupi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cas of buduciCasovi">
+          <td>{{ cas.vremeod | date: 'medium' }}</td>
+          <td>{{ cas.vremedo | date: 'medium' }}</td>
+          <td>{{ cas.nastavnikPI }}</td>
+          <td>{{ cas.predmet }}</td>
+          <td>{{ cas.komentar }}</td>
+          <td>
+            <button *ngIf="provera15(cas)" (click)="udjiUUcionicu(cas)" class="btn btn-primary">Prikljuci se</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="opcija=='obavestenja'" class="container mt-4">
+  <!-- Content for obavestenja -->
+</div>

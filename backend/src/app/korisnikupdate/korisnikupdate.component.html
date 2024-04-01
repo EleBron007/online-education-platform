@@ -1,0 +1,91 @@
+<div class="container">
+  <div>
+    <h4 class="mb-3">Uredi profil</h4>
+    <img [src]="slikab" alt="Profilna slika" class="mb-3"> <br>
+
+    <div class="form-group">
+      <label for="ime">Ime:</label>
+      <input type="text" id="ime" [(ngModel)]="korisnik!.ime" name="ime" required class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="prezime">Prezime:</label>
+      <input type="text" id="prezime" [(ngModel)]="korisnik!.prezime" name="prezime" required class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="adresa">Adresa:</label>
+      <input type="text" id="adresa" [(ngModel)]="korisnik!.adresa" name="adresa" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="korisnik!.email_adresa" name="email" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="telefon">Kontakt Telefon:</label>
+      <input type="tel" id="telefon" [(ngModel)]="korisnik!.kontakt_telefon" name="telefon" class="form-control">
+    </div>
+    <hr>
+
+
+    <div class="form-group">
+      <label for="predmeti">Predmeti:</label>
+      <div class="row">
+        <div class="col">
+          <div *ngFor="let predmet of svipredmeti" class="form-check">
+            <input type="checkbox" [value]="predmet" (change)="selectPredmet(predmet.predmet)" [checked]="korisnik!.predmeti.includes(predmet.predmet)" class="form-check-input">
+            <label class="form-check-label">{{ predmet.predmet }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label for="uzrasti">Kom uzrastu želite da predajete?</label>
+      <div class="row">
+        <div class="col">
+          <div *ngFor="let uzrast of sviuzrasti" class="form-check">
+            <input type="checkbox" [value]="uzrast" (change)="selectUzrast(uzrast)" [checked]="korisnik!.uzrasti.includes(uzrast)" class="form-check-input">
+            <label class="form-check-label">{{ uzrast }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label for="izvorpitanje">Gde ste čuli za naš sajt?</label>
+      <input type="text" [(ngModel)]="korisnik!.izvorpitanje" class="form-control">
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label for="profilnaSlika">Profilna Slika (file):</label>
+      <input type="file" (change)="promenaSlike($event)" accept="image/png, image/jpeg" class="form-control-file">
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label for="cv">Dodajte CV (PDF):</label>
+      <input type="file" (change)="promenaCV($event)" accept="application/pdf" required class="form-control-file">
+    </div>
+
+    <hr>
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf="msg!='' && msg !='Uspeh'">
+      {{msg}}
+    </div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="msg=='Uspeh'">
+      {{msg}}
+    </div>
+
+    <button type="button" (click)="saveProfile()" class="btn btn-primary">Sačuvaj</button>
+  </div>
+</div>

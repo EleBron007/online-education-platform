@@ -1,0 +1,18 @@
+header {
+  background-color: #6f8aa5;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

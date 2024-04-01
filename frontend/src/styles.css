@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+header {
+  background-color: #343a40;
+  padding: 15px 20px;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 24px;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+footer {
+  background-color: #343a40;
+  padding: 15px 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+a {
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+/*
+.profile-picture-container {
+  overflow:hidden;
+  border-radius: 50%;
+}
+
+.profile-picture-zoom {
+  transition: transform 0.2s ease-in-out;
+}
+
+.profile-picture-zoom:hover {
+  transform: scale(1.1);
+}
+
+.profile-info-column {
+
+}
+*/
